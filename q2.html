@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In and Sign-Up Page</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="image">
+        <div class="formbox">
+            <div class="button">
+                <div id="butn"></div>
+                <input type="radio" name="form-switch" id="login" class="toggle" checked>
+                <label for="login" class="toggle-button">Log-In</label>
+                <input type="radio" name="form-switch" id="register" class="toggle">
+                <label for="register" class="toggle-button">Register</label>
+            </div>
+            <form id="login-form" class="input">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submitbutton">Log In</button>
+            </form>
+            <form id="register-form" class="input" style="display: none;">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="email" class="input-field" placeholder="Enter Email-Id" required>
+                <input type="checkbox" class="check-box"><span>I Agree to terms and Conditions</span>
+                <button type="submit" class="submitbutton">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("register").addEventListener("click", function () {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").style.display = "block";
+        });
+
+        document.getElementById("login").addEventListener("click", function () {
+            document.getElementById("register-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
