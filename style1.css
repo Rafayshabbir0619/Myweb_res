@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.image {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(demo.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formbox {
+    width: 380px;
+    height: auto;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggle {
+    display: none;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.toggle-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.input {
+    display: none;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.check-box {
+    margin-right: 5px;
+}
+
+.submitbutton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    color: #fff;
+    cursor: pointer;
+}
+
+.submitbutton:hover {
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    opacity: 0.8;
+}

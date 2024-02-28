@@ -1,0 +1,74 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #f8f9fa;
+    /* Light grey background */
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+    /* Add some space between logo and text */
+}
+
+.navbar-nav .nav-link {
+    margin-right: 10px;
+    /* Add space between nav items */
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: #ffffff;
+    /* White background */
+    padding: 50px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    /* Large font size for the title */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    /* Larger font size for the subtitle */
+    margin-bottom: 30px;
+    /* Add space between title and form */
+}
+
+/* Form Styles */
+.form-control {
+    border-radius: 0;
+    /* Remove border radius for form input */
+}
+
+.input-group button {
+    border-radius: 0;
+    /* Remove border radius for form button */
+}
+
+/* Popular Options Styles */
+.main-content {
+    padding: 50px 0;
+    /* Add space between sections */
+}
+
+.main-content h2 {
+    font-size: 2rem;
+    /* Large font size for the section title */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40;
+    /* Dark grey background */
+    color: #ffffff;
+    /* White text color */
+    padding: 20px 0;
+    /* Add space around content */
+}
