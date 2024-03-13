@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-git.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Div Animation</title>
+    <style>
+        #myDiv {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv"></div>
+
+    <script>
+        $(document).ready(function () {
+        
+            $("#myDiv").animate({
+                left: '100%',
+            }, 8000); 
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+

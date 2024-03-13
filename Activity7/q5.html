@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Clicked Element Class and ID</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Click event handler for all elements
+            $("*").click(function (event) {
+                // Prevent default action
+                event.preventDefault();
+                // Get class and id of clicked element
+                var elementClass = $(this).attr("class");
+                var elementId = $(this).attr("id");
+                // Display class and id
+                if (elementClass && elementId) {
+                    alert("Class: " + elementClass + ", ID: " + elementId);
+                } else if (elementClass) {
+                    alert("Class: " + elementClass);
+                } else if (elementId) {
+                    alert("ID: " + elementId);
+                } else {
+                    alert("No class or id found for clicked element.");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="container" class="main">
+        <h1 id="heading">Click me!</h1>
+        <p class="content">Lorem ipsum dolor sit amet.</p>
+        <button id="btn" class="btn">Click here</button>
+    </div>
+
+</body>
+
+</html>

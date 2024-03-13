@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+    <title>
+        Removing a table row
+    </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+
+    <style>
+        #myCol {
+            background: black;
+        }
+
+        table {
+            color: white;
+        }
+
+        #Geek_p {
+            color: black;
+            font-size: 30px;
+        }
+
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1 style="color:black;">
+            Removal of Row
+        </h1>
+
+        <table>
+            <colgroup>
+                <col id="myCol" span="2">
+                <col style="background-color:black">
+            </colgroup>
+
+            <tr>
+                <th>S.No</th>
+                <th>Title</th>
+                <th>Id</th>
+            </tr>
+            <tr id="row1">
+                <td>Person1</td>
+                <td>Doctor</td>
+                <th>1</th>
+            </tr>
+            <tr>
+                <td>Person2</td>
+                <td>Engineer</td>
+                <th>2</th>
+            </tr>
+        </table>
+        <br>
+
+        <button onclick="Geeks()">
+        </button>
+
+        <!-- Script to remove table row from table -->
+        <script>
+            function Geeks() {
+                $("#row1").remove();
+            } 
+        </script>
+    </center>
+</body>
+
+</html>
