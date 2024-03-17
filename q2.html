@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="searchBtn">Search</button>
+        <div id="currentConditions"></div>
+        <div id="forecast"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#searchBtn').click(function () {
+                var city = $('#cityInput').val();
+                var apiKey = '36628e85d73142742fece9af7a2da6e9';
+                var currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=metric';
+                var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + apiKey + '&units=metric';
+
+                // Fetch current weather conditions
+                $.ajax({
+                    url: currentWeatherUrl,
+                    type: 'GET',
+                    success: function (data) {
+                        $('#currentConditions').html('<h2>Current Conditions in ' + city + '</h2>' +
+                            '<p>Temperature: ' + Math.round(data.main.temp) + '°C</p>' +
+                            '<p>Weather: ' + data.weather[0].main + '</p>');
+                    },
+                    error: function () {
+                        $('#currentConditions').html('<p>City not found. Please try again.</p>');
+                    }
+                });
+
+                // Fetch 5-day forecast
+                $.ajax({
+                    url: forecastUrl,
+                    type: 'GET',
+                    success: function (data) {
+                        var forecastHTML = '<h2>5-Day Forecast</h2><div class="forecast-items">';
+                        for (var i = 0; i < data.list.length; i += 8) { // Forecast data is provided every 3 hours, so we skip 8 items for 5 days
+                            var forecast = data.list[i];
+                            forecastHTML += '<div class="forecast-item">' +
+                                '<p>Date: ' + forecast.dt_txt + '</p>' +
+                                '<p>Temperature: ' + Math.round(forecast.main.temp) + '°C</p>' +
+                                '<p>Weather: ' + forecast.weather[0].main + '</p>' +
+                                '</div>';
+                        }
+                        forecastHTML += '</div>';
+                        $('#forecast').html(forecastHTML);
+                    },
+                    error: function () {
+                        $('#forecast').html('<p>Forecast data not available.</p>');
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

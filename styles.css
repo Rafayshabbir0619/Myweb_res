@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+.scoreboard {
+    font-size: 1.2rem;
+}
+
+.hands {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.hand {
+    width: 100px;
+    /* Adjust width as needed */
+    transition: transform 0.3s ease-in-out;
+}
+
+.choices {
+    margin: 20px 0;
+}
+
+.choice {
+    width: 100px;
+    /* Adjust width as needed */
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}

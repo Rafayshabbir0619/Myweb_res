@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="scoreboard">
+            <span id="user-score">0</span> - <span id="computer-score">0</span>
+        </div>
+        <div class="choices">
+            <img class="choice" src="rock.png" alt="Rock" data-choice="rock">
+            <img class="choice" src="paper.png" alt="Paper" data-choice="paper">
+            <img class="choice" src="scissors.png" alt="Scissors" data-choice="scissors">
+        </div>
+        <div class="result">
+            <p>Make your choice!</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        let userScore = 0;
+        let computerScore = 0;
+
+        function playRound(userChoice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            displayResult(userChoice, computerChoice);
+
+            if (userChoice === computerChoice) {
+                displayMessage("It's a tie!");
+            } else if ((userChoice === 'rock' && computerChoice === 'scissors') ||
+                (userChoice === 'paper' && computerChoice === 'rock') ||
+                (userChoice === 'scissors' && computerChoice === 'paper')) {
+                userScore++;
+                $('#user-score').text(userScore);
+                displayMessage("You win!");
+            } else {
+                computerScore++;
+                $('#computer-score').text(computerScore);
+                displayMessage("Computer wins!");
+            }
+
+        }
+
+        function displayResult(userChoice, computerChoice) {
+            $('.result').html(`<p>You chose <strong>${userChoice}</strong>.<br>Computer chose <strong>${computerChoice}</strong>.</p>`);
+        }
+
+        function displayMessage(message) {
+            $('.result').append(`<p>${message}</p>`);
+        }
+
+        $('.choice').click(function () {
+            const userChoice = $(this).data('choice');
+            playRound(userChoice);
+        });
+    });
+
+    </script>
+</body>
+
+</html>
